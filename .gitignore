@@ -1,0 +1,25 @@
+# Ignore temporary files
+*.tmp
+temp/*
+
+# Ignore build artifacts
+build/
+out/
+bin/
+
+# Ignore log files
+*.log
+
+# Ignore IDE specific files
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+diabeticvirtualassistant-firebase-adminsdk-fbsvc-b7c63be69b.json
+# Ignore node modules
+node_modules/

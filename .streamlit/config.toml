@@ -1,0 +1,12 @@
+[theme]
+primaryColor = "#374151"
+backgroundColor = "#F9FAFB"
+secondaryBackgroundColor = "#F3F4F6"
+textColor = "#374151"
+font = "sans serif" # or "Roboto", "Open Sans", etc.
+
+[client]
+toolbarMode = "minimal"
+
+[ui]
+hideTopBar = true
