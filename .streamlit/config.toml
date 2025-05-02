@@ -10,3 +10,6 @@ toolbarMode = "minimal"
 
 [ui]
 hideTopBar = true
+
+[server]
+runOnSave =true
