@@ -23,9 +23,8 @@ FILE_PATH = os.path.join(
     os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
     "documents/diabeticeducator",
 )
-
-HOST_NAME = os.environ.get("CHROMA_HOST_NAME")
-BASE_URL = os.environ.get("OLLAMA_URL")
+HOST_NAME = os.environ.get("CHROMA_HOST_NAME", "chromadb")
+BASE_URL = os.environ.get("OLLAMA_URL", "http://ollama:11434")
 MODEL = "llama3.2:1b"
 COLLECTION_NAME = "guidelines_collection"
 
@@ -188,7 +187,7 @@ def main():
         )
         with st.status("Thinking..."):
             response = rag_chain.invoke(selection)
-            
+
         with st.chat_message("assistant"):
             st.markdown(response)
 
@@ -206,7 +205,7 @@ def main():
         )
         with st.status("Thinking..."):
             response = rag_chain.invoke(prompt)
-        
+
         with st.chat_message("assistant"):
             st.markdown(response)
 

@@ -23,8 +23,8 @@ FILE_PATH = os.path.join(
     os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
     "documents/personaltrainer",
 )
-HOST_NAME = os.environ.get("CHROMA_HOST_NAME")
-BASE_URL = os.environ.get("OLLAMA_URL")
+HOST_NAME = os.environ.get("CHROMA_HOST_NAME", "chromadb")
+BASE_URL = os.environ.get("OLLAMA_URL", "http://ollama:11434")
 MODEL = "llama3.2:1b"
 COLLECTION_NAME = "trainer_collection"
 
@@ -203,7 +203,7 @@ def main():
         st.session_state.personal_trainer_messages.append(
             {"role": "user", "content": prompt}
         )
-        
+
         with st.status("Thinking..."):
             response = rag_chain.invoke(prompt)
         with st.chat_message("assistant"):

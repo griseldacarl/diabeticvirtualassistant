@@ -19,8 +19,8 @@ FILE_PATH = os.path.join(
 )
 st.set_page_config("Chef", page_icon=":material/cooking:", layout="centered")
 
-HOST_NAME = os.environ.get("CHROMA_HOST_NAME")
-BASE_URL = os.environ.get("OLLAMA_URL")
+HOST_NAME = os.environ.get("CHROMA_HOST_NAME", "chromadb")
+BASE_URL = os.environ.get("OLLAMA_URL", "http://ollama:11434")
 MODEL = "llama3.2:1b"
 COLLECTION_NAME = "chef_collection"
 
@@ -186,7 +186,7 @@ def main():
             st.markdown(prompt)
 
         st.session_state.chef_messages.append({"role": "user", "content": prompt})
-        
+
         with st.status("Thinking..."):
             response = qa.invoke(prompt)
 

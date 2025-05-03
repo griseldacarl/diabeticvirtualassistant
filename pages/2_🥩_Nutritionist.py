@@ -19,8 +19,8 @@ FILE_PATH = os.path.join(
     "documents/nutrition",
 )
 
-HOST_NAME = os.environ.get("CHROMA_HOST_NAME")
-BASE_URL = os.environ.get("OLLAMA_URL")
+HOST_NAME = os.environ.get("CHROMA_HOST_NAME", "chromadb")
+BASE_URL = os.environ.get("OLLAMA_URL", "http://ollama:11434")
 MODEL = "llama3.2:1b"
 COLLECTION_NAME = "nutrition_collection"
 
