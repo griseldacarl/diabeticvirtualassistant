@@ -11,3 +11,6 @@ three email addresses:
 
 
 ![Diabtes Virtual Assistant](dva.jpg "Diabtes Virtual Assistant")
+
+
+No password is needed.
